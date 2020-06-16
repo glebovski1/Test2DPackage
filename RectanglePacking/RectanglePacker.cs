@@ -45,7 +45,7 @@ namespace RectanglePacking
             };
             rectangles = rectangles.OrderByDescending(rectangle => rectangle.Hight).ToList();
             PackedRectengles = new Dictionary<Coordinates, Rectangle>();
-            if (rectangles[0].Hight > this.Hight && rectangles[0].Width > this.Width)
+            if (rectangles[0].Hight > this.Hight || rectangles[0].Width > this.Width)
             {
                 return false;
             }
