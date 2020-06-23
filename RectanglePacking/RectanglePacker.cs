@@ -49,6 +49,11 @@ namespace RectanglePacking
             {
                 return false;
             }
+            var rectanglesOrderedByWidth = rectangles.OrderByDescending(rectangle => rectangle.Width).ToList();
+            if(rectanglesOrderedByWidth[0].Width > this.Width)
+            {
+                return false;
+            }
             Vlvl = rectangles[0].Hight;
             foreach(var item in rectangles)
             {
