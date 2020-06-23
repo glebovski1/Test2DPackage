@@ -68,7 +68,8 @@
                 <TextBox x:Name="MinorHight" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Height="30" />
                 <TextBox x:Name="MinorWidth" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Height="30" />
                 <TextBox x:Name="Number" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Height="30" />
-                <Button x:Name="Add" Grid.Row="3" Grid.ColumnSpan="3" Content="Add rectangles" Click="Button_Add_Rectangles_Click"></Button>
+                <Button x:Name="Add" Grid.Row="3" Grid.ColumnSpan="2" Content="Add rectangles" Click="Button_Add_Rectangles_Click"></Button>
+                <Button x:Name="Refresh" Grid.Row="3" Grid.Column="3" Content="Refresh" Click="Button_Refresh"></Button>
                 <Button x:Name="Calculate" Grid.Row="4" Grid.ColumnSpan="3" Content="Calculate" Click="Button_Calculate_Click"></Button>
             </Grid>
 

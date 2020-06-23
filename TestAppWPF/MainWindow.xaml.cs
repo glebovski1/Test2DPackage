@@ -50,17 +50,30 @@ namespace TestAppWPF
         }
         private void Button_Add_Rectangles_Click(object sender, RoutedEventArgs e)
         {
-            if(rectangles == null)
+            try
             {
-                rectangles = new List<RectanglePacking.Rectangle>();
+                if (rectangles == null)
+                {
+                    rectangles = new List<RectanglePacking.Rectangle>();
+                }
+                var rectangleHight = Convert.ToInt32(MinorHight.Text);
+                var rectangleWidth = Convert.ToInt32(MinorWidth.Text);
+                var numberOfRectangles = Convert.ToInt32(Number.Text);
+                for (int i = 0; i < numberOfRectangles; i++)
+                {
+                    rectangles.Add(new RectanglePacking.Rectangle(rectangleHight, rectangleWidth)); ;
+                }
             }
-            var rectangleHight = Convert.ToInt32(MinorHight.Text);
-            var rectangleWidth = Convert.ToInt32(MinorWidth.Text);
-            var numberOfRectangles = Convert.ToInt32(Number.Text);
-            for (int i = 0; i < numberOfRectangles; i++)
+            catch(Exception ex)
             {
-                rectangles.Add(new RectanglePacking.Rectangle(rectangleHight, rectangleWidth)); ;
+                MassageBox.Text = ex.Message;
             }
+        }
+
+        private void Button_Refresh(object sender, RoutedEventArgs e)
+        {
+
+            rectangles?.Clear();
         }
         private void Button_Calculate_Click(object sender, RoutedEventArgs e)
         {
