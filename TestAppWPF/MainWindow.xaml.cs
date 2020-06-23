@@ -27,9 +27,8 @@ namespace TestAppWPF
         int boxHight;
         int boxWidth;
 
-        int rectangleHight;
-        int rectangleWidth;
-        int numberOfRectangles;
+        List<RectanglePacking.Rectangle> rectangles = null;
+        
 
         RectanglePacker rectanglePacker = null;
 
@@ -49,7 +48,20 @@ namespace TestAppWPF
            
            
         }
-        
+        private void Button_Add_Rectangles_Click(object sender, RoutedEventArgs e)
+        {
+            if(rectangles == null)
+            {
+                rectangles = new List<RectanglePacking.Rectangle>();
+            }
+            var rectangleHight = Convert.ToInt32(MinorHight.Text);
+            var rectangleWidth = Convert.ToInt32(MinorWidth.Text);
+            var numberOfRectangles = Convert.ToInt32(Number.Text);
+            for (int i = 0; i < numberOfRectangles; i++)
+            {
+                rectangles.Add(new RectanglePacking.Rectangle(rectangleHight, rectangleWidth)); ;
+            }
+        }
         private void Button_Calculate_Click(object sender, RoutedEventArgs e)
         {
             Drowing.Children.Clear();
@@ -57,19 +69,13 @@ namespace TestAppWPF
             {
                 boxHight = Convert.ToInt32(MainHight.Text);
                 boxWidth = Convert.ToInt32(MainWidth.Text);
-                rectangleHight = Convert.ToInt32(MinorHight.Text);
-                rectangleWidth = Convert.ToInt32(MinorWidth.Text);
-                numberOfRectangles = Convert.ToInt32(Number.Text);
+                
 
                 rectanglePacker = new RectanglePacker(boxHight, boxWidth);
 
                 bool result;
 
-                List<RectanglePacking.Rectangle> rectangles = new List<RectanglePacking.Rectangle>();
-                for (int i = 0; i < numberOfRectangles; i++)
-                {
-                    rectangles.Add(new RectanglePacking.Rectangle(rectangleHight, rectangleWidth));
-                }
+                
 
                 result = rectanglePacker.PackRectangleWithNFDH(rectangles);
 

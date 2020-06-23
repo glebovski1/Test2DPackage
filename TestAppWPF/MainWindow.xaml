@@ -7,7 +7,7 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="429.535" Width="681.705">
+        Title="MainWindow" Height="485.849" Width="1049.405">
 
     <Grid x:Name="Main">
         <Grid.ColumnDefinitions>
@@ -53,6 +53,7 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -67,7 +68,8 @@
                 <TextBox x:Name="MinorHight" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Height="30" />
                 <TextBox x:Name="MinorWidth" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Height="30" />
                 <TextBox x:Name="Number" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Height="30" />
-                <Button x:Name="Calculate" Grid.Row="3" Grid.ColumnSpan="3" Content="Calculate" Click="Button_Calculate_Click"></Button>
+                <Button x:Name="Add" Grid.Row="3" Grid.ColumnSpan="3" Content="Add rectangles" Click="Button_Add_Rectangles_Click"></Button>
+                <Button x:Name="Calculate" Grid.Row="4" Grid.ColumnSpan="3" Content="Calculate" Click="Button_Calculate_Click"></Button>
             </Grid>
 
 
@@ -83,7 +85,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid x:Name="Drowing" Grid.Row="0" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center">
-               
+
             </Grid>
             <Border Grid.Row="1" BorderBrush="Azure" BorderThickness="5">
                 <TextBlock x:Name="MassageBox" Text="MassageBox" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
