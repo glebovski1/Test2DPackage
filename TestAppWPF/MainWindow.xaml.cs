@@ -90,7 +90,8 @@ namespace TestAppWPF
 
                 
 
-                result = rectanglePacker.PackRectangleWithNFDH(rectangles);
+                //result = rectanglePacker.PackRectangleWithNFDH(rectangles);
+                result = rectanglePacker.PackRectangleWithFFDH(rectangles);
 
                 if(!result)
                 {
